@@ -61,12 +61,23 @@ for i in range(acccounts):
     sleep(1)
 
     #4.login
-    ActionChains(driver)\
-        .move_to_element_with_offset(screen, 350, 60)\
-        .click()\
-        .perform()
-    print(f'Account {i+1} entering game...')
-    sleep(20)  # loading...
-    print(f'Account {i+1} login completed')
+#4.login
+ActionChains(driver)\
+    .move_to_element_with_offset(screen, 350, 60)\
+    .click()\
+    .perform()
 
-    driver.quit()
+#4.click center (新增)
+ActionChains(driver)\
+    .move_to_element_with_offset(screen, 200, 60)\
+    .click()\
+    .perform()
+
+print(f'Account {i+1} entering game...')
+sleep(80) # loading...
+print(f'Account {i+1} login completed')
+
+# 循环外保留原有的总结打印
+print(f'Account completed')
+
+driver.quit()
